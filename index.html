@@ -412,22 +412,31 @@
 
     <script src="script.js" type="module"></script>
     <script>
-        ymaps.ready(init);
+        if (typeof ymaps !== 'undefined') {
+            ymaps.ready(init);
+        }
         function init() {
-            var myMap = new ymaps.Map("map", {
-                center: [55.765762, 37.619791],
-                zoom: 16,
-                controls: ['zoomControl']
-            });
+            try {
+                var mapContainer = document.getElementById('map');
+                if (!mapContainer) return;
 
-            var myPlacemark = new ymaps.Placemark([55.765762, 37.619791], {
-                balloonContent: '<strong>Kamel Smash Burger</strong><br>Неглинная улица, 27<br>+7 (925) 557-77-20'
-            }, {
-                preset: 'islands#redFoodIcon'
-            });
+                var myMap = new ymaps.Map("map", {
+                    center: [55.765762, 37.619791],
+                    zoom: 16,
+                    controls: ['zoomControl']
+                });
 
-            myMap.geoObjects.add(myPlacemark);
-            myMap.behaviors.disable('scrollZoom');
+                var myPlacemark = new ymaps.Placemark([55.765762, 37.619791], {
+                    balloonContent: '<strong>Kamel Smash Burger</strong><br>Неглинная улица, 27<br>+7 (925) 557-77-20'
+                }, {
+                    preset: 'islands#redFoodIcon'
+                });
+
+                myMap.geoObjects.add(myPlacemark);
+                myMap.behaviors.disable('scrollZoom');
+            } catch(e) {
+                console.log('Map error:', e);
+            }
         }
     </script>
 </body>
