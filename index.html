@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamel Smash Burger - Бургерная с доставкой</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=6a9aca5a-0a67-4fb3-a22a-fa87de83678c&lang=ru_RU"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">KAMEL SMASH BURGER</a>
+            <nav class="nav">
+                <a href="#menu">Меню</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <div class="header-right">
+                <a href="tel:+79255577720" class="phone">+7 (925) 557-77-20</a>
+                <a href="#" class="header-login">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    Войти
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Video -->
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="copy_57E7F2E0-3C5C-427D-90D4-4B4E01CE88DF.MOV" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>KAMEL SMASH BURGER</h1>
+            <p>Настоящие смэш бургеры с доставкой</p>
+            <a href="#menu" class="btn">Смотреть меню</a>
+        </div>
+    </section>
+
+    <!-- Delivery Info -->
+    <section class="delivery-info">
+        <div class="container">
+            <div class="delivery-bar">
+                <div class="delivery-tabs">
+                    <button class="delivery-tab active">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                        Доставка
+                    </button>
+                    <button class="delivery-tab">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9,22 9,12 15,12 15,22"/>
+                        </svg>
+                        Самовывоз
+                    </button>
+                </div>
+                <div class="delivery-address" id="delivery-text">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <span>В пределах МКАД · 30-60 мин · Бесплатно от 2000 ₽</span>
+                </div>
+                <div class="delivery-address" id="pickup-text" style="display: none;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <span>Неглинная улица, 27 · Готовность 15-20 мин</span>
+                </div>
+            </div>
+            <a href="tel:+79255577720" class="delivery-promo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <div class="delivery-promo-text">
+                    <strong>Заказать по телефону</strong>
+                    <span>+7 (925) 557-77-20 · Ежедневно с 11:00 до 23:00</span>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <!-- Menu Navigation -->
+            <div class="menu-nav">
+                <button class="menu-nav-item active" data-category="burgers">Бургеры</button>
+                <button class="menu-nav-item" data-category="combo">Комбо</button>
+                <button class="menu-nav-item" data-category="ribs">Рёбра</button>
+                <button class="menu-nav-item" data-category="salads">Салаты</button>
+                <button class="menu-nav-item" data-category="sides">Дополнительно</button>
+                <button class="menu-nav-item" data-category="drinks">Напитки</button>
+                <button class="menu-nav-item" data-category="alcohol">Пиво и Вино</button>
+                <button class="menu-nav-item" data-category="shakes">Шейки</button>
+                <button class="menu-nav-item" data-category="cookies">Печенье</button>
+            </div>
+
+            <!-- Бургеры -->
+            <div class="menu-category" id="cat-burgers">
+                <h2 class="menu-title">БУРГЕРЫ</h2>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="s.jpg" alt="Бургер S">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3 class="menu-card-title">Бургер S</h3>
+                            <p class="menu-card-description">Классический смэш бургер с котлетой, сыром и фирменным соусом</p>
+                            <div class="menu-card-price">
+                                <span>450 ₽</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="mnew.jpg" alt="Бургер M">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3 class="menu-card-title">Бургер M</h3>
+                            <p class="menu-card-description">Смэш бургер с двойной котлетой, сыром Чеддер и свежими овощами</p>
+                            <div class="menu-card-price">
+                                <span>650 ₽</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="Lnew.jpg" alt="Бургер L">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3 class="menu-card-title">Бургер L</h3>
+                            <p class="menu-card-description">Большой бургер с двойной котлетой, беконом и сыром</p>
+                            <div class="menu-card-price">
+                                <span>750 ₽</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Комбо -->
+            <div class="menu-category" id="cat-combo">
+                <h2 class="menu-title">КОМБО</h2>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="combo_s.jpg" alt="Комбо S">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3 class="menu-card-title">Бургер S + Фри + Кола</h3>
+                            <p class="menu-card-description">Комбо с бургером S, картофелем фри и напитком</p>
+                            <div class="menu-card-price">
+                                <span>950 ₽</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="combo_m.jpg" alt="Комбо M">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3 class="menu-card-title">Бургер М + Фри + Кола</h3>
+                            <p class="menu-card-description">Комбо с бургером M, картофелем фри и напитком</p>
+                            <div class="menu-card-price">
+                                <span>1150 ₽</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="combo_ribs.jpg" alt="Рёбра BBQ комбо">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3 class="menu-card-title">Рёбра BBQ + Фри + Пиво</h3>
+                            <p class="menu-card-description">Комбо с рёбрами BBQ, картофелем фри и пивом</p>
+                            <div class="menu-card-price">
+                                <span>1490 ₽</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Рёбра -->
+            <div class="menu-category" id="cat-ribs">
+                <h2 class="menu-title">РЁБРА</h2>
+                <div class="menu-list">
+                    <div class="menu-item"><span class="menu-item-name">Рёбра BBQ</span><span class="menu-item-price">790 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Рёбра в азиатском стиле</span><span class="menu-item-price">790 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Говяжьи рёбра</span><span class="menu-item-price">1950 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Куриное филе в панировке</span><span class="menu-item-price">460 ₽</span></div>
+                </div>
+            </div>
+
+            <!-- Салаты -->
+            <div class="menu-category" id="cat-salads">
+                <h2 class="menu-title">САЛАТЫ</h2>
+                <div class="menu-list">
+                    <div class="menu-item"><span class="menu-item-name">Зелёный салат</span><span class="menu-item-price">490 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Овощной салат</span><span class="menu-item-price">580 ₽</span></div>
+                </div>
+            </div>
+
+            <!-- Дополнительно -->
+            <div class="menu-category" id="cat-sides">
+                <h2 class="menu-title">ДОПОЛНИТЕЛЬНО</h2>
+                <div class="menu-list">
+                    <div class="menu-item"><span class="menu-item-name">Картофель фри</span><span class="menu-item-price">380 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Картофель фри с сыром</span><span class="menu-item-price">430 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Куриное филе в панировке</span><span class="menu-item-price">250 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Голубой сыр</span><span class="menu-item-price">190 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Сыр Чеддер</span><span class="menu-item-price">109 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Трюфельный соус</span><span class="menu-item-price">150 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Сырный / Горячий / BBQ соус</span><span class="menu-item-price">80 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Бекон</span><span class="menu-item-price">80 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Халапеньо</span><span class="menu-item-price">80 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Яйцо</span><span class="menu-item-price">50 ₽</span></div>
+                </div>
+            </div>
+
+            <!-- Напитки -->
+            <div class="menu-category" id="cat-drinks">
+                <h2 class="menu-title">НАПИТКИ</h2>
+                <div class="menu-list">
+                    <div class="menu-item"><span class="menu-item-name">Домашний лимонад</span><span class="menu-item-price">300 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Кола / Апельсин / Лайм</span><span class="menu-item-price">250 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Натахтари</span><span class="menu-item-price">300 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Сок</span><span class="menu-item-price">250 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Вода</span><span class="menu-item-price">190 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Эспрессо / Американо</span><span class="menu-item-price">190 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Капучино средний</span><span class="menu-item-price">210 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Капучино большой</span><span class="menu-item-price">300 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Чай чёрный / зелёный</span><span class="menu-item-price">200 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Чай облепиховый / ягодный</span><span class="menu-item-price">300 ₽</span></div>
+                </div>
+            </div>
+
+            <!-- Пиво и Вино -->
+            <div class="menu-category" id="cat-alcohol">
+                <h2 class="menu-title">ПИВО И ВИНО</h2>
+                <div class="menu-list">
+                    <div class="menu-item"><span class="menu-item-name">Spatten 0.5</span><span class="menu-item-price">390 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Hoegaarden 0.5</span><span class="menu-item-price">390 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Abbe Blonde / Brune 0.33</span><span class="menu-item-price">350 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">AV Белое 0.125</span><span class="menu-item-price">560 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">AV Розовое 0.125</span><span class="menu-item-price">560 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">AV Красное 0.125</span><span class="menu-item-price">560 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Игристое 0.125</span><span class="menu-item-price">900 ₽</span></div>
+                </div>
+            </div>
+
+            <!-- Шейки -->
+            <div class="menu-category" id="cat-shakes">
+                <h2 class="menu-title">ШЕЙКИ</h2>
+                <div class="menu-list">
+                    <div class="menu-item"><span class="menu-item-name">Шоколадный</span><span class="menu-item-price">480 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Ягодный</span><span class="menu-item-price">550 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">С печеньем</span><span class="menu-item-price">520 ₽</span></div>
+                </div>
+            </div>
+
+            <!-- Печенье -->
+            <div class="menu-category" id="cat-cookies">
+                <h2 class="menu-title">ПЕЧЕНЬЕ ROSE COOKIES</h2>
+                <div class="menu-list">
+                    <div class="menu-item"><span class="menu-item-name">Фундук / Карамель</span><span class="menu-item-price">450 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Грецкий орех / Карамель</span><span class="menu-item-price">450 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Три шоколада</span><span class="menu-item-price">490 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Зелёный чай и малина</span><span class="menu-item-price">640 ₽</span></div>
+                </div>
+                <h3 class="menu-subtitle">Дополнительно к печенью</h3>
+                <div class="menu-list">
+                    <div class="menu-item"><span class="menu-item-name">Взбитые сливки</span><span class="menu-item-price">100 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Мороженое</span><span class="menu-item-price">240 ₽</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Шоколадный соус</span><span class="menu-item-price">150 ₽</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contacts-wrapper">
+                <div class="contacts-info">
+                    <div class="contacts-item">
+                        <h3>Адрес</h3>
+                        <p>г. Москва, Неглинная улица, 27</p>
+                    </div>
+                    <div class="contacts-item">
+                        <h3>Телефон</h3>
+                        <p><a href="tel:+79255577720">+7 (925) 557-77-20</a></p>
+                    </div>
+                    <div class="contacts-item">
+                        <h3>Время работы</h3>
+                        <p>Ежедневно с 11:00 до 23:00</p>
+                    </div>
+                </div>
+                <div id="map" class="map"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-image">
+                    <img src="" alt="" id="modalImage">
+                </div>
+                <div class="modal-info">
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <p class="modal-description" id="modalDescription"></p>
+
+                    <div class="modal-extras">
+                        <h3>Дополнительно</h3>
+                        <div class="extras-grid">
+                            <label class="extra-item">
+                                <input type="checkbox" data-price="80">
+                                <span class="extra-name">Бекон</span>
+                                <span class="extra-price">+ 80 ₽</span>
+                            </label>
+                            <label class="extra-item">
+                                <input type="checkbox" data-price="109">
+                                <span class="extra-name">Сыр Чеддер</span>
+                                <span class="extra-price">+ 109 ₽</span>
+                            </label>
+                            <label class="extra-item">
+                                <input type="checkbox" data-price="80">
+                                <span class="extra-name">Халапеньо</span>
+                                <span class="extra-price">+ 80 ₽</span>
+                            </label>
+                            <label class="extra-item">
+                                <input type="checkbox" data-price="50">
+                                <span class="extra-name">Яйцо</span>
+                                <span class="extra-price">+ 50 ₽</span>
+                            </label>
+                            <label class="extra-item">
+                                <input type="checkbox" data-price="150">
+                                <span class="extra-name">Трюфельный соус</span>
+                                <span class="extra-price">+ 150 ₽</span>
+                            </label>
+                            <label class="extra-item">
+                                <input type="checkbox" data-price="190">
+                                <span class="extra-name">Голубой сыр</span>
+                                <span class="extra-price">+ 190 ₽</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="modal-add-btn" id="modalAddBtn">
+                        <span id="modalPrice">450 ₽</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">KAMEL SMASH BURGER</div>
+                <p>&copy; 2026 Kamel Smash Burger. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        ymaps.ready(init);
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                center: [55.765762, 37.619791],
+                zoom: 16,
+                controls: ['zoomControl']
+            });
+
+            var myPlacemark = new ymaps.Placemark([55.765762, 37.619791], {
+                balloonContent: '<strong>Kamel Smash Burger</strong><br>Неглинная улица, 27<br>+7 (925) 557-77-20'
+            }, {
+                preset: 'islands#redFoodIcon'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+            myMap.behaviors.disable('scrollZoom');
+        }
+    </script>
+</body>
+</html>

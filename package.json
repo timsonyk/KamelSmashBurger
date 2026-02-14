@@ -1,0 +1,13 @@
+{
+  "name": "kamel-smash-burger",
+  "version": "1.0.0",
+  "description": "Сайт бургерной Kamel Smash Burger",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
