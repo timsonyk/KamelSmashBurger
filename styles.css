@@ -858,72 +858,66 @@ a {
 }
 
 @media (max-width: 768px) {
-    /* Header */
+    /* Header - compact single row */
     .header {
-        padding: 10px 0;
+        padding: 8px 0;
     }
 
     .header .container {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
         gap: 10px;
     }
 
     .logo {
-        font-size: 16px;
-        order: 1;
-        width: 100%;
-        text-align: center;
+        font-size: 12px;
+        letter-spacing: 1px;
     }
 
     .nav {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .nav a {
-        font-size: 12px;
+        display: none;
     }
 
     .header-right {
-        order: 2;
-        gap: 10px;
+        gap: 8px;
     }
 
     .phone {
-        font-size: 13px;
+        font-size: 11px;
     }
 
     .header-login {
-        padding: 6px 12px;
-        font-size: 12px;
+        padding: 5px 10px;
+        font-size: 11px;
+        gap: 5px;
     }
 
     .header-login svg {
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
     }
 
-    /* Hero */
+    /* Hero - shorter */
     .hero {
-        min-height: 500px;
+        height: 50vh;
+        min-height: 300px;
     }
 
     .hero-content h1 {
-        font-size: 28px;
-        letter-spacing: 3px;
+        font-size: 24px;
+        letter-spacing: 2px;
     }
 
     .hero-content p {
-        font-size: 16px;
-        margin-bottom: 25px;
+        font-size: 14px;
+        margin-bottom: 20px;
     }
 
     .btn {
-        padding: 12px 30px;
-        font-size: 14px;
+        padding: 10px 25px;
+        font-size: 13px;
     }
 
     /* Delivery Info */
@@ -1002,35 +996,35 @@ a {
     }
 
     .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
     .menu-card {
-        max-width: 350px;
-        margin: 0 auto;
+        max-width: 100%;
     }
 
     .menu-card-image {
-        padding-bottom: 90%;
+        padding-bottom: 100%;
     }
 
     .menu-card-content {
-        padding: 15px 0;
+        padding: 10px 0;
     }
 
     .menu-card-title {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .menu-card-description {
-        font-size: 13px;
-        margin-bottom: 15px;
+        font-size: 11px;
+        margin-bottom: 10px;
+        -webkit-line-clamp: 2;
     }
 
     .menu-card-price {
-        padding: 10px 18px;
-        font-size: 14px;
+        padding: 8px 12px;
+        font-size: 12px;
     }
 
     .menu-list {
@@ -1177,21 +1171,39 @@ a {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        height: 40vh;
+        min-height: 250px;
+    }
+
     .hero-content h1 {
-        font-size: 24px;
-        letter-spacing: 2px;
+        font-size: 20px;
+        letter-spacing: 1px;
     }
 
     .hero-content p {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .delivery-address span {
-        font-size: 11px;
+        font-size: 10px;
     }
 
-    .menu-card {
-        max-width: 100%;
+    .menu-grid {
+        gap: 10px;
+    }
+
+    .menu-card-title {
+        font-size: 12px;
+    }
+
+    .menu-card-description {
+        display: none;
+    }
+
+    .menu-card-price {
+        padding: 6px 10px;
+        font-size: 11px;
     }
 
     .contacts h2 {
