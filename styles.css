@@ -858,79 +858,366 @@ a {
 }
 
 @media (max-width: 768px) {
+    /* Header */
+    .header {
+        padding: 10px 0;
+    }
+
     .header .container {
-        flex-direction: column;
-        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
-    .header-right {
-        gap: 15px;
-    }
-
-    .header-login {
-        padding: 6px 14px;
-        font-size: 13px;
+    .logo {
+        font-size: 16px;
+        order: 1;
+        width: 100%;
+        text-align: center;
     }
 
     .nav {
-        gap: 20px;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav a {
+        font-size: 12px;
+    }
+
+    .header-right {
+        order: 2;
+        gap: 10px;
+    }
+
+    .phone {
+        font-size: 13px;
+    }
+
+    .header-login {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .header-login svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 500px;
     }
 
     .hero-content h1 {
-        font-size: 36px;
-        letter-spacing: 4px;
+        font-size: 28px;
+        letter-spacing: 3px;
     }
 
     .hero-content p {
-        font-size: 18px;
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    /* Delivery Info */
+    .delivery-info {
+        padding: 20px 0 15px;
+    }
+
+    .delivery-bar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .delivery-tabs {
+        width: 100%;
+    }
+
+    .delivery-tab {
+        flex: 1;
+        justify-content: center;
+        padding: 10px 15px;
+        font-size: 13px;
+        gap: 6px;
+    }
+
+    .delivery-tab svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .delivery-address {
+        padding: 10px 15px;
+        justify-content: center;
+    }
+
+    .delivery-address span {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .delivery-promo {
+        padding: 15px 18px;
+    }
+
+    .delivery-promo-text strong {
+        font-size: 14px;
+    }
+
+    .delivery-promo-text span {
+        font-size: 12px;
+    }
+
+    /* Menu */
+    .menu {
+        padding: 30px 0 60px;
+    }
+
+    .menu-nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .menu-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu-nav-item {
+        flex-shrink: 0;
+        font-size: 12px;
+        padding: 8px 14px;
+        white-space: nowrap;
     }
 
     .menu-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .menu-card {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .menu-card-image {
+        padding-bottom: 90%;
+    }
+
+    .menu-card-content {
+        padding: 15px 0;
+    }
+
+    .menu-card-title {
+        font-size: 16px;
+    }
+
+    .menu-card-description {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .menu-card-price {
+        padding: 10px 18px;
+        font-size: 14px;
     }
 
     .menu-list {
         grid-template-columns: 1fr;
+        gap: 8px;
     }
 
-    .menu-nav {
-        justify-content: center;
+    .menu-item {
+        padding: 12px 0;
+    }
+
+    .menu-item-name {
+        font-size: 14px;
+    }
+
+    .menu-item-price {
+        font-size: 14px;
     }
 
     .menu-title {
         text-align: center;
-        font-size: 24px;
+        font-size: 22px;
+        margin-bottom: 20px;
     }
 
-    .delivery-grid {
-        grid-template-columns: 1fr;
+    .menu-category {
+        margin-bottom: 40px;
+    }
+
+    .menu-subtitle {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* Contacts */
+    .contacts {
+        padding: 60px 0;
+    }
+
+    .contacts h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
     }
 
     .contacts-wrapper {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .contacts-item {
         text-align: center;
     }
 
-    .map {
-        height: 300px;
+    .contacts-item p {
+        font-size: 18px;
     }
 
-    .btn-large {
-        padding: 15px 30px;
+    .map {
+        height: 280px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer-logo {
         font-size: 14px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+
+    /* Modal */
+    .modal {
+        max-height: 95vh;
+        margin: 10px;
+        border-radius: 15px;
+    }
+
+    .modal-content {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .modal-image {
+        padding: 20px;
+        max-height: 35vh;
+    }
+
+    .modal-image img {
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    .modal-info {
+        padding: 20px 15px 25px;
+        max-height: 55vh;
+    }
+
+    .modal-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .modal-description {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .modal-extras {
+        margin-bottom: 20px;
+    }
+
+    .modal-extras h3 {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .extras-grid {
+        gap: 8px;
+    }
+
+    .extra-item {
+        padding: 10px 12px;
+    }
+
+    .extra-name, .extra-price {
+        font-size: 13px;
+    }
+
+    .modal-add-btn {
+        padding: 15px;
+        font-size: 16px;
+        border-radius: 12px;
     }
 }
 
 @media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 28px;
+        font-size: 24px;
+        letter-spacing: 2px;
     }
 
-    .menu-nav-item {
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .delivery-address span {
+        font-size: 11px;
+    }
+
+    .menu-card {
+        max-width: 100%;
+    }
+
+    .contacts h2 {
+        font-size: 24px;
+    }
+
+    .contacts-item p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo {
+        font-size: 14px;
+    }
+
+    .hero-content h1 {
+        font-size: 20px;
+    }
+
+    .delivery-tab {
+        padding: 8px 10px;
         font-size: 12px;
-        padding: 8px 12px;
+    }
+
+    .menu-title {
+        font-size: 18px;
     }
 }
