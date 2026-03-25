@@ -149,4 +149,37 @@ document.addEventListener('DOMContentLoaded', function() {
     extraCheckboxes.forEach(cb => {
         cb.addEventListener('change', updateModalPrice);
     });
+
+    // Login Modal
+    const loginModal = document.getElementById('loginModal');
+    const loginBtn = document.getElementById('loginBtn');
+    const loginModalClose = document.getElementById('loginModalClose');
+
+    if (loginBtn && loginModal) {
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        loginModalClose.addEventListener('click', function() {
+            loginModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        loginModal.addEventListener('click', function(e) {
+            if (e.target === loginModal) {
+                loginModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ESC key for login modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && loginModal.classList.contains('active')) {
+                loginModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 });

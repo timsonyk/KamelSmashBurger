@@ -903,8 +903,8 @@ a {
     .hero {
         height: auto;
         min-height: auto;
-        margin-top: 0;
-        padding-top: 0;
+        margin-top: -45px;
+        padding-top: 45px;
     }
 
     .hero-video {
@@ -917,6 +917,7 @@ a {
         min-width: 0;
         min-height: 0;
         object-fit: contain;
+        margin-top: -45px;
     }
 
     .hero-overlay {
@@ -1246,6 +1247,80 @@ a {
     .contacts-item p {
         font-size: 16px;
     }
+}
+
+/* Login Modal */
+.login-modal {
+    max-width: 400px;
+}
+
+.login-content {
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.login-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4a90d9;
+}
+
+.form-group input::placeholder {
+    color: #555;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background: #4a90d9;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #5a9fe9;
+}
+
+.login-note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #666;
 }
 
 @media (max-width: 360px) {
